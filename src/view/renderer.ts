@@ -198,7 +198,7 @@ export class Renderer {
     async createAssets() {
         this.subjectMesh = new ObjMesh();
         this.triangleMesh = new TriangleMesh(this.device);
-        await this.subjectMesh.initialize(this.device, "./dist/obj/UTAHPOT_POT.obj");
+        await this.subjectMesh.initialize(this.device, "./dist/obj/oldspice.obj");
         this.material = new Material();
 
 
@@ -214,7 +214,7 @@ export class Renderer {
         this.objectBuffer = this.device.createBuffer(modelBufferDescriptor);
 
 
-        await this.material.initialize(this.device, "./dist/obj/pot_color_copy.png", this.materialGroupLayout);
+        await this.material.initialize(this.device, "./dist/obj/oldspice_low_Material_low_Color.png", this.materialGroupLayout);
     }
 
     async makeBindGroup() {
@@ -284,7 +284,7 @@ export class Renderer {
         const renderpass : GPURenderPassEncoder = commandEncoder.beginRenderPass({
             colorAttachments: [{
                 view: textureView,
-                clearValue: {r: 0.75, g: 0.75, b: 0.75, a: 1.0},
+                clearValue: {r: 1, g: 0.75, b: 0.75, a: 1.0},
                 loadOp: "clear",
                 storeOp: "store"
             }],

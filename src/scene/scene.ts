@@ -20,7 +20,7 @@ export class Scene {
         );
 
         this.player = new Camera(
-            [-8.0, 0, 3.7], 0, 0
+            [-9.5, 0, 1.5], 0, 0
         );
     }
 
